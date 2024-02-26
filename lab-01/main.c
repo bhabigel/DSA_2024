@@ -5,8 +5,6 @@ int main() {
     int choice;
     float number1, number2,number3;
 
-
-
     printf("\t1.Sum of two numbers\n"
            "\t2.Minimum from three numbers\n"
            "\t.3 Dynamic memory allocation\n"
@@ -36,10 +34,10 @@ int main() {
             int n=5, *pArray = NULL;
             allocateMemoryForArray2(n,&pArray);
             readArray(&n, &pArray, "be.txt");
-            printArray(&n, &pArray, "be.txt");
+             //printArray(&n, &pArray, "be.txt");
             break;
         }
     }
 
-
+//
 }
