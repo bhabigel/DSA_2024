@@ -41,7 +41,7 @@ scanf("%i", &choice1);
         case 2:
         {
             printf("\t1.Matrix beolvasasa es kiiratasa\n"
-                   "\t2.Pozitiv szamok osszege\n"
+                   "\t2.Matrix adott soranak legkissebb eleme\n"
                    "Valassz!\n");
             scanf("%i", &choice3);
 
@@ -54,7 +54,19 @@ scanf("%i", &choice1);
                     readMatrix(&rows, &cols, &matrix, "be.txt");
                     printMatrix(rows, cols, matrix, "ki.txt");
                     deallocateMemoryForMatrix(rows,&matrix);
-                    break;2
+                    break;
+                }
+
+                case 2:
+                {
+                    readMatrix(&rows, &cols, &matrix, "be.txt");
+                    printf("Hanyadik sorban szeretnel keresni?\n");
+                    int x;
+                    scanf("%i",&x);
+                    //printf("A %i. sor legkisebb eleme: %i", x, minimumValueOfRow(cols,&rows));
+                    minimumValueOfRow(cols,&rows);
+                    deallocateMemoryForMatrix(rows,&matrix);
+                    break;
                 }
 
 

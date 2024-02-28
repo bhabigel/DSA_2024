@@ -80,3 +80,16 @@ void deallocateMemoryForMatrix(int rows, int ***dpMatrix)
     free(dpMatrix);
 
 }
+
+void minimumValueOfRow(int cols, int *pRow){
+    int min = pRow[0];
+
+    for (int i = 1; i < cols; i++) {
+        printf("%i , ",pRow[i]);
+        if (pRow[i] < min) {
+            min = pRow[i];
+        }
+    }
+
+    printf("\n%i",min);
+}

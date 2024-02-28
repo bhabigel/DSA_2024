@@ -14,5 +14,7 @@ void readMatrix(int *pRows, int *pCols, int ***dpArray, const char *input);
 void printMatrix(int rows, int cols, int **pMatrix, const char *output);
 void printMatrix(int rows, int cols, int **pMatrix, const char *output);
 void deallocateMemoryForMatrix(int rows, int ***dpMatrix);
+void minimumValueOfRow(int cols, int *pRow);
+
 
 #endif //LAB_02_FUNCTIONS_H

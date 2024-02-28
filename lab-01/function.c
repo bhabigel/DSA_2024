@@ -20,39 +20,45 @@ float minimum(float number1, float number2, float number3)
     return min;
 }
 
-void allocateMemoryForArray2(int n, int **dpArray)
-{
-    *dpArray = malloc(n* sizeof(int));
-    if(!*dpArray)
+void allocateMemoryForArray2(int n, int **dpArray) {
+    *dpArray = malloc(n * sizeof(int));
+    if (!*dpArray)
         exit(MEMORY_ALLOCATION_ERROR);
 }
 
-void readArray(int *pn, int **dpArray, const char *input)
-{
-    if(strcmp(input,"CON")==0)
-    {
-        //billentyuzet
+void readArray(int *pn, int **dpArray, const char *input) {
+    if (strcmp(input, "CON") == 0) {
+        // Read from keyboard
     }
-    if(strcmp(input,"CON")==0)
-    {
-        //allomany
-        FILE* in = fopen(input, "r");
-        if(!in) exit(EXIT_FAILURE);
-        fscanf(in,"%i",pn);
-        allocateMemoryForArray2(*pn,dpArray);
+    if (strcmp(input, "FILE") == 0) {
+        // Read from file
+        FILE *in = fopen(input, "r");
+        if (!in) exit(EXIT_FAILURE);
+        fscanf(in, "%i", pn);
+        allocateMemoryForArray2(*pn, dpArray);
 
-        for(int i=0;i<*pn;i++)
-        {
-            fscanf(in,"%i",(*dpArray)[i]);
+        for (int i = 0; i < *pn; i++) {
+            fscanf(in, "%i", &((*dpArray)[i]));
         }
         fclose(in);
     }
 }
 
-void dellocateMemoryArray(int **dpArray)
-{
+void printArray(int *n, int **dpArray, const char *output) {
+    FILE *file = fopen(output, "w");
+    if (file == NULL) {
+        exit(EXIT_FAILURE);
+    }
+
+    for (int i = 0; i < n; i++) {
+        fprintf(file, "%d ", dpArray[i]);
+    }
+
+    fclose(file);
+}
+
+void dellocateMemoryArray(int **dpArray) {
     free(*dpArray);
-    *dpArray = NULL;
 }
 
 
