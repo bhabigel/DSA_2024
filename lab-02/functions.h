@@ -1,11 +1,12 @@
 //
 // Created by Hanga on 26/02/2024.
 //
-#include <stdio.h>
-#include <stdlib.h>
+
 
 #ifndef LAB_02_FUNCTIONS_H
 #define LAB_02_FUNCTIONS_H
+
+
 
 int numberOfEvenNumbers(int n, int *pArray);
 int sumOfPositiveNumbers(int n, int *pArray);

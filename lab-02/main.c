@@ -93,7 +93,7 @@ scanf("%i", &choice1);
                     printf("Hanyadik oszopban szeretnel keresni?\n");
                     int columnIndex;
                     scanf("%i",&columnIndex);
-                    maximumValueOfColumn(rows, columnIndex,&matrix);
+                    maximumValueOfColumn(rows, columnIndex,matrix);
                     deallocateMemoryForMatrix(rows,&matrix);
                     break;
                 }
@@ -101,7 +101,7 @@ scanf("%i", &choice1);
                 {
                     readMatrix(&rows, &cols, &matrix, "be.txt");
                     printMatrix(rows, cols, matrix, "ki.txt");
-                    printf("Az atlag: %2.f", foatloAtlag(rows, cols, &matrix));
+                    printf("Az atlag: %2.f", foatloAtlag(rows, cols, matrix));
                     deallocateMemoryForMatrix(rows, &matrix);
                     break;
                 }

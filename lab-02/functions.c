@@ -1,6 +1,7 @@
 #include "functions.h"
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 int numberOfEvenNumbers(int n, int *pArray)
 {
     int count=0;
