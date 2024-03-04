@@ -93,3 +93,42 @@ void minimumValueOfRow(int cols, int *pRow){
 
     printf("\n%i",min);
 }
+float average(int n, int* pArray)
+{
+    float sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        sum += pArray[i];
+    }
+    return sum / n;
+}
+int numberOfOddNumbers(int n, int* pArray)
+{
+    int count=0;
+    for (int i = 0; i < n; i++)
+    {
+        if (pArray[i] % 2 != 0)
+            count++;
+    }
+    return count;
+}
+int productOfNegativeNumbers(int n, int* pArray)
+{
+    int szorzat = 1;
+    for (int i = 0; i < n; i++)
+    {
+        if (pArray[i] < 0)
+            szorzat *= pArray[i];
+    }
+    return szorzat;
+}
+int maximumValueOfColumn(int rows, int columnIndex, int** pMatrix)
+{
+    int mx = pMatrix[0][columnIndex];
+    for (int i = 1; i < rows; i++)
+    {
+        if (pMatrix[i][columnIndex] > mx)
+            mx = pMatrix[i][columnIndex];
+    }
+    return mx;
+}

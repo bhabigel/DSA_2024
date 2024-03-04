@@ -15,6 +15,10 @@ void printMatrix(int rows, int cols, int **pMatrix, const char *output);
 void printMatrix(int rows, int cols, int **pMatrix, const char *output);
 void deallocateMemoryForMatrix(int rows, int ***dpMatrix);
 void minimumValueOfRow(int cols, int *pRow);
+float average(int n, int* pArray);
+int numberOfOddNumbers(int n, int* pArray);
+int productOfNegativeNumbers(int n, int* pArray);
+int maximumValueOfColumn(int rows, int columnIndex, int** pMatrix);
 
 
 #endif //LAB_02_FUNCTIONS_H
