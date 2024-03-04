@@ -19,6 +19,7 @@ float average(int n, int* pArray);
 int numberOfOddNumbers(int n, int* pArray);
 int productOfNegativeNumbers(int n, int* pArray);
 int maximumValueOfColumn(int rows, int columnIndex, int** pMatrix);
+float foatloAtlag(int rows, int cols, int** pMatrix);
 
 
 #endif //LAB_02_FUNCTIONS_H

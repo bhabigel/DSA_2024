@@ -132,3 +132,20 @@ int maximumValueOfColumn(int rows, int columnIndex, int** pMatrix)
     }
     return mx;
 }
+float foatloAtlag(int rows, int cols, int** pMatrix)
+{
+    float sum = 0;
+    int count = 0;
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            if(i==j)
+                sum += pMatrix[i][j];
+            if (pMatrix[i][j] != 0)
+                count++;
+        }
+    }
+
+    float average = sum / count;
+    return average;
+
+}

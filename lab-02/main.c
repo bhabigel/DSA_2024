@@ -61,6 +61,7 @@ scanf("%i", &choice1);
             printf("\t1.Matrix beolvasasa es kiiratasa\n"
                    "\t2.Matrix adott soranak legkissebb eleme\n"
                    "\t3.Egy adott oszlop legnagyobb eleme\n"
+                   "\t4.Foatlo elemeinek atlaga\n"
                    "Valassz!\n");
             scanf("%i", &choice3);
 
@@ -94,6 +95,14 @@ scanf("%i", &choice1);
                     scanf("%i",&columnIndex);
                     maximumValueOfColumn(rows, columnIndex,&matrix);
                     deallocateMemoryForMatrix(rows,&matrix);
+                    break;
+                }
+                case 4:
+                {
+                    readMatrix(&rows, &cols, &matrix, "be.txt");
+                    printMatrix(rows, cols, matrix, "ki.txt");
+                    printf("Az atlag: %2.f", foatloAtlag(rows, cols, &matrix));
+                    deallocateMemoryForMatrix(rows, &matrix);
                     break;
                 }
 
