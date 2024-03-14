@@ -1,7 +1,8 @@
+
 #include <stdio.h>
-#include "student.h"
+#include "headers/student.h"
 
 int main() {
-    void ki();
-    printf("nem siker");
+    FILM film1={"Divergent",2016,0};
+    printFilms(film1);
 }
