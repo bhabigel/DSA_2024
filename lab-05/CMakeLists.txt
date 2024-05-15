@@ -5,4 +5,6 @@ set(CMAKE_C_STANDARD 23)
 
 add_executable(lab_05 main.c
         stack.c
-        stack.h)
+        stack.h
+        queue.c
+        queue.h)
