@@ -1,0 +1,5 @@
+Alice 1990 5 15 F
+Bob 1985 10 20 M
+Charlie 1978 12 30 M
+David 2000 3 25 M
+Emily 1995 8 10 F

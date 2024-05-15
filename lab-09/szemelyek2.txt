@@ -1,0 +1,5 @@
+Anna 1987 9 25 F
+Daniel 1987 11 7 M
+Fiona 1980 4 12 F
+George 1975 6 18 M
+Hannah 1980 4 3 F
