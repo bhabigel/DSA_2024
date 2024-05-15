@@ -1,30 +1,34 @@
 //
-// Created by Hanga on 27/03/2024.
+// Created by Hanga on 14/04/2024.
 //
 
 #ifndef LAB_06_QUEUE_H
 #define LAB_06_QUEUE_H
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
+#define MAX_CAPACITY 100
+#define INPUT_FILE "patients.txt"
+
+typedef struct {
+    char name[50];
+    int age;
+    char disease[50];
+} Patient;
 
 typedef struct {
     int capacity;
     int front;
     int rear;
-    char ** elements;
-}Queue;
+    int size;
+    Patient* patients;
+} MedicalCenter;
 
-#define EMPTY_MESSAGE "Stack is empty.\n"
-#define FULL_MESSAGE "Stack is full.\n"
-#define MEMORY_ALLOCATION_ERROR_CODE 1
-#define MEMORY_ALLOCATION_ERROR_MESSAGE "Memory allocation failed.\n"
-
-
-void createQueue(int capacity, Queue *queue);
-void destroyQueue(Queue* queue);
-bool isFull(Queue queue);
-bool isEmpty(Queue queue);
-void enqueue(Queue* queue, char* item);
-char* dequeue(Queue* queue);
-void display(Queue queue);
-
+void createMedicalCenter(int capacity, MedicalCenter* center);
+void enqueue(MedicalCenter* center, Patient patient);
+void dequeue(MedicalCenter* center);
+void displayQueue(MedicalCenter* center);
 
 #endif //LAB_06_QUEUE_H

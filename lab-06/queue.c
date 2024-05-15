@@ -1,64 +1,50 @@
-#include "queue.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include "queue.h"
 
-void createQueue(int capacity, Queue *queue) {
-    queue->capacity = capacity;
-    queue->front = queue->rear = -1;
-    queue->elements = (char **)calloc(queue->capacity, sizeof(char *));
-    if (!queue->elements) {
-        printf("MEMORY_ALLOCATION_ERROR_MESSAGE\n");
-        exit(-1);
+void createMedicalCenter(int capacity, MedicalCenter* center) {
+    center->capacity = capacity;
+    center->front = 0;
+    center->rear = -1;
+    center->size = 0;
+    center->patients = (Patient*)calloc(capacity, sizeof(Patient));
+    if (!center->patients) {
+        printf("Memory allocation failed.\n");
+        exit(EXIT_FAILURE);
     }
 }
 
-void destroyQueue(Queue *queue) {
-    free(queue->elements);
-    queue->front = queue->rear = -1;
-    queue->capacity = 0;
-}
-
-bool isEmpty(Queue queue) {
-    return queue.front == -1;
-}
-
-bool isFull(Queue queue) {
-    return queue.rear == queue.capacity - 1;
-}
-
-void enqueue(Queue *queue, char *item) {
-    if (isFull(*queue)) {
-        printf("FULL_MESSAGE\n");
+void enqueue(MedicalCenter* center, Patient patient) {
+    if (center->size == center->capacity) {
+        printf("The medical center is full.\n");
         return;
     }
-    if (isEmpty(*queue)) {
-        queue->front = 0;
-    }
-    strcpy(queue->elements[++queue->rear], item);
+    center->rear = (center->rear + 1) % center->capacity;
+    center->patients[center->rear] = patient;
+    center->size++;
 }
 
-char *dequeue(Queue *queue) {
-    if (isEmpty(*queue)) {
-        printf("EMPTY_MESSAGE\n");
-        return NULL;
-    }
-    char *item = queue->elements[queue->front];
-    if (queue->front == queue->rear) {
-        queue->front = queue->rear = -1;
-    } else {
-        queue->front++;
-    }
-    return item;
-}
-
-void display(Queue queue) {
-    if (isEmpty(queue)) {
-        printf("The queue is empty.\n");
+void dequeue(MedicalCenter* center) {
+    if (center->size == 0) {
+        printf("The medical center is empty.\n");
         return;
     }
-    printf("The elements in the queue are:\n");
-    for (int i = queue.front; i <= queue.rear; ++i) {
-        printf("%s\n", queue.elements[i]);
+    printf("%s has been served.\n", center->patients[center->front].name);
+    center->front = (center->front + 1) % center->capacity;
+    center->size--;
+}
+
+void displayQueue(MedicalCenter* center) {
+    if (center->size == 0) {
+        printf("The medical center is empty.\n");
+        return;
+    }
+
+    printf("Patients in the medical center:\n");
+    int i = center->front;
+    for (int j = 0; j < center->size; j++) {
+        printf("%s (%d years)\n", center->patients[i].name, center->patients[i].age);
+        i = (i + 1) % center->capacity;
     }
 }
+

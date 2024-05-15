@@ -1,0 +1,10 @@
+John 45 FEVER
+Alice 30 DIABETES
+Bob 55 HEADACHE
+Emma 20 COLD
+Michael 65 DIABETES
+Sophia 40 FEVER
+William 50 DIABETES
+Olivia 35 HEADACHE
+James 60 COLD
+Charlotte 25 FEVER
